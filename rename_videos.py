@@ -21,7 +21,7 @@ def normalise_path(path: str):
 
 def rename_files(path: str):
     """Rename the files in the path from the long format to the short format (see the description of the program up there)."""
-    old_content = [f for f in os.listdir(path)]
+    old_content = os.listdir(path)
     new_content = [re.sub(r".*[sS](\d\d)[eE](\d\d).*\.(.+)$", r"S\1E\2.\3", f) for f in old_content]
     print("Here is the changment that will be applied : ")
     for (old, new) in zip(old_content, new_content):
